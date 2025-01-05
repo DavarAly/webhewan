@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvShop | Daftar dan Pemasanan Produk</title>
+
+    <style>
+      /* Modal adjustments for larger screen sizes */
+      @media (min-width: 1024px) {
+        .modal-content {
+          width: 80%; /* Increase width to 80% on large screens */
+          max-width: 900px; /* Maximum width */
+          padding: 20px; /* Add some padding */
+        }
+
+        .modal-image {
+          width: 50%; /* Set image width to 50% for larger screens */
+        }
+
+        .modal-text {
+          width: 50%; /* Set text width to 50% for larger screens */
+        }
+      }
+    </style>
+</head>
+<body>
+    
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <header>
+        <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Product Collection</h2>
+  
+        <p class="mt-4 max-w-md text-gray-500">
+         Berikut adalah koleksi produk yang kami miliki, klik pada gambar untuk melihat deskripsi produk dan memesan produk melalui tombol Order.
+        </p>
+      </header>
+  
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Produk 1 -->
+        <li>
+          <a href="#" class="group block overflow-hidden border border-blue border-4 rounded-lg" id="product-item-1">
+            <img
+              src="https://down-id.img.susercontent.com/file/sg-11134201-7rdvt-m0ztu70jfmiv9c"
+              alt="Product 1"
+              class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+            />
+  
+            <div class="relative bg-white pt-3">
+              <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4 pl-4">
+                ALAT PIJAT WAJAH PENGENCANG KULIT
+              </h3>
+  
+              <p class="mt-2">
+                <span class="sr-only"> Regular Price </span>
+  
+                <span class="tracking-wider text-gray-900 pl-4 pb-4"> Rp 85.000,00 </span>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <!-- Produk 2 -->
+        <li>
+          <a href="#" class="group block overflow-hidden border-blue border-4 rounded-lg" id="product-item-2">
+            <img
+              src="https://down-id.img.susercontent.com/file/id-11134207-7r98u-ly58ab4pu8ym43"
+              class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+            />
+  
+            <div class="relative bg-white pt-3">
+              <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4 pl-4">
+                KAMUS CHAT GPT
+              </h3>
+  
+              <p class="mt-2">
+                <span class="sr-only"> Regular Price </span>
+  
+                <span class="tracking-wider text-gray-900 pl-4 pb-4"> Rp 150.000,00 </span>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <!-- Produk 3 -->
+        <li>
+          <a href="#" class="group block overflow-hidden border-blue border-4 rounded-lg" id="product-item-3">
+            <img
+              src="https://down-id.img.susercontent.com/file/1ce21501cea627bc6987a36e254be830@resize_w450_nl.webp"
+              alt="Product 3"
+              class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+            />
+  
+            <div class="relative bg-white pt-3">
+              <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4 pl-4">
+                ALAT PEL SIMPEL 
+              </h3>
+  
+              <p class="mt-2">
+                <span class="sr-only"> Regular Price </span>
+  
+                <span class="tracking-wider text-gray-900 pl-4 pb-4"> Rp 73.000,00 </span>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <!-- Produk 4 -->
+        <li>
+          <a href="#" class="group block overflow-hidden border-blue border-4 rounded-lg" id="product-item-4">
+            <img
+              src="https://down-id.img.susercontent.com/file/id-11134207-7r98t-lmydcvar7zmn3a.webp"
+              alt="Product 4"
+              class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+            />
+  
+            <div class="relative bg-white pt-3">
+              <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4 pl-4">
+                PEMBERSIH KEYBOARD 8 IN 1
+              </h3>
+  
+              <p class="mt-2">
+                <span class="sr-only"> Regular Price </span>
+  
+                <span class="tracking-wider text-gray-900 pl-4 pb-4"> Rp 55.500,00 </span>
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+</section>
+
+<!-- Modal untuk Menampilkan Detail Produk -->
+<section id="product-modal-1" class="hidden fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg overflow-hidden max-w-[90%] sm:max-w-lg mx-auto py-6 px-4 flex flex-col lg:flex-row relative modal-content">
+        <button id="close-modal-1" class="absolute top-2 right-2 text-2xl text-gray-700 hover:text-gray-900">&times;</button>
+        <img
+            src="https://down-id.img.susercontent.com/file/sg-11134201-7rdvt-m0ztu70jfmiv9c"
+            alt="Product 1"
+            class="h-[300px] w-full object-cover md:h-[400px] lg:w-[50%] lg:h-auto modal-image"
+        />
+        <div class="sm:w-full sm:pl-8 flex flex-col justify-center overflow-auto lg:w-[50%] modal-text">
+            <h2 class="text-xl font-bold text-gray-800 mb-3">ALAT PIJAT ELEKTRIK WAJAH PENGENCANG KULIT</h2>
+            <p class="text-gray-600 mb-4 text-sm">Alat pengencang wajah elektrik membantu mengencangkan kulit, mengurangi tanda penuaan, memperbaiki tekstur, dan membuat wajah lebih cerah serta rileks.</p>
+            <p class="tracking-wider text-gray-900 text-lg mb-6">Rp 85.000,00</p>
+            <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring">
+                <a href="https://wa.me/6281385485880?text=Halo, saya ingin bertanya tentang produk Alat Pijat Elektrik Pengencang Wajah.">Order Now</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal untuk Produk 2 -->
+<section id="product-modal-2" class="hidden fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg overflow-hidden max-w-[90%] sm:max-w-lg mx-auto py-6 px-4 flex flex-col lg:flex-row relative modal-content">
+        <button id="close-modal-2" class="absolute top-2 right-2 text-2xl text-gray-700 hover:text-gray-900">&times;</button>
+        <img
+            src="https://down-id.img.susercontent.com/file/id-11134207-7r98u-ly58ab4pu8ym43"
+            alt="Product 2"
+            class="h-[300px] w-full object-cover md:h-[400px] lg:w-[50%] lg:h-auto modal-image"
+        />
+        <div class="sm:w-full sm:pl-8 flex flex-col justify-center overflow-auto lg:w-[50%] modal-text">
+            <h2 class="text-xl font-bold text-gray-800 mb-3">KAMUS CHAT GPT</h2>
+            <p class="text-gray-600 mb-4 text-sm">Buku Kamus ChatGPT berguna sebagai referensi cepat untuk menemukan definisi, sinonim, terjemahan, dan istilah teknis, membantu pembelajaran,
+               penulisan, serta mempermudah komunikasi dan pemecahan masalah secara praktis.</p>
+            <p class="tracking-wider text-gray-900 text-lg mb-6">Rp 150.000,00</p>
+            <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring">
+                <a href="https://wa.me/6281385485880?text=Halo, saya ingin bertanya tentang produk Kamus Chat GPT.">Order Now</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal untuk Produk 3 -->
+<section id="product-modal-3" class="hidden fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg overflow-hidden max-w-[90%] sm:max-w-lg mx-auto py-6 px-4 flex flex-col lg:flex-row relative modal-content">
+        <button id="close-modal-3" class="absolute top-2 right-2 text-2xl text-gray-700 hover:text-gray-900">&times;</button>
+        <img
+            src="https://down-id.img.susercontent.com/file/1ce21501cea627bc6987a36e254be830@resize_w450_nl.webp"
+            alt="Product 3"
+            class="h-[300px] w-full object-cover md:h-[400px] lg:w-[50%] lg:h-auto modal-image"
+        />
+        <div class="sm:w-full sm:pl-8 flex flex-col justify-center overflow-auto lg:w-[50%] modal-text">
+            <h2 class="text-xl font-bold text-gray-800 mb-3">ALAT PEL SIMPEL</h2>
+            <p class="text-gray-600 mb-4 text-sm">Alat pel ini dirancang agar penggunaannya praktis dan mudah ketika di peras sehingga dapat menghemat waktu mengepel.</p>
+            <p class="tracking-wider text-gray-900 text-lg mb-6">Rp 73.000,00</p>
+            <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring">
+                <a href="https://wa.me/6281385485880?text=Halo, saya ingin bertanya tentang produk Alat Pel Simpel.">Order Now</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal untuk Produk 4 -->
+<section id="product-modal-4" class="hidden fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg overflow-hidden max-w-[90%] sm:max-w-lg mx-auto py-6 px-4 flex flex-col lg:flex-row relative modal-content">
+        <button id="close-modal-4" class="absolute top-2 right-2 text-2xl text-gray-700 hover:text-gray-900">&times;</button>
+        <img
+            src="https://down-id.img.susercontent.com/file/id-11134207-7r98t-lmydcvar7zmn3a.webp"
+            alt="Product 4"
+            class="h-[300px] w-full object-cover md:h-[400px] lg:w-[50%] lg:h-auto modal-image"
+        />
+        <div class="sm:w-full sm:pl-8 flex flex-col justify-center overflow-auto lg:w-[50%] modal-text">
+            <h2 class="text-xl font-bold text-gray-800 mb-3">PEMBERSIH KEYBOARD 8 IN 1</h2>
+            <p class="text-gray-600 mb-4 text-sm">Pembersih keyboard 8 in 1 yang mudah untuk dibawa kemana-mana.</p>
+            <p class="tracking-wider text-gray-900 text-lg mb-6">Rp 55.500,00</p>
+            <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring">
+                <a href="https://wa.me/6281385485880?text=Halo, saya ingin bertanya tentang produk Pembersih Keyboard.">Order Now</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Script untuk Menampilkan dan Menutup Modal -->
+<script>
+  const productItems = document.querySelectorAll('[id^="product-item-"]');
+  const productModals = document.querySelectorAll('[id^="product-modal-"]');
+  const closeButtons = document.querySelectorAll('[id^="close-modal-"]');
+
+  productItems.forEach((item, index) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault(); // Mencegah link default
+      productModals[index].classList.remove('hidden');
+    });
+  });
+
+  closeButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      productModals[index].classList.add('hidden');
+    });
+  });
+
+  // Menutup modal ketika area luar modal di klik
+  productModals.forEach((modal) => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
